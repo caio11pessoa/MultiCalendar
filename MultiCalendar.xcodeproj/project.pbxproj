@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		34F80E5D2E5D25B600B2095B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F80E592E5D25B600B2095B /* Assets.xcassets */; };
+		34F80E5E2E5D25B600B2095B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F80E5A2E5D25B600B2095B /* ContentView.swift */; };
+		34F80E5F2E5D25B600B2095B /* MultiCalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F80E5B2E5D25B600B2095B /* MultiCalendarApp.swift */; };
+		34F80E622E5D25D800B2095B /* MultiCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F80E612E5D25D800B2095B /* MultiCalendarViewModel.swift */; };
+		34F80E642E5D262900B2095B /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F80E632E5D262900B2095B /* ScheduleView.swift */; };
+		34F80E662E5D26DD00B2095B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F80E652E5D26DD00B2095B /* CalendarView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		34F80E252E56643200B2095B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,14 +36,15 @@
 		34F80E172E56643000B2095B /* MultiCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F80E242E56643200B2095B /* MultiCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F80E2E2E56643200B2095B /* MultiCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		34F80E592E5D25B600B2095B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34F80E5A2E5D25B600B2095B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		34F80E5B2E5D25B600B2095B /* MultiCalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCalendarApp.swift; sourceTree = "<group>"; };
+		34F80E612E5D25D800B2095B /* MultiCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCalendarViewModel.swift; sourceTree = "<group>"; };
+		34F80E632E5D262900B2095B /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		34F80E652E5D26DD00B2095B /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		34F80E192E56643000B2095B /* MultiCalendar */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MultiCalendar;
-			sourceTree = "<group>";
-		};
 		34F80E272E56643200B2095B /* MultiCalendarTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MultiCalendarTests;
@@ -75,7 +85,7 @@
 		34F80E0E2E56643000B2095B = {
 			isa = PBXGroup;
 			children = (
-				34F80E192E56643000B2095B /* MultiCalendar */,
+				34F80E5C2E5D25B600B2095B /* MultiCalendar */,
 				34F80E272E56643200B2095B /* MultiCalendarTests */,
 				34F80E312E56643200B2095B /* MultiCalendarUITests */,
 				34F80E182E56643000B2095B /* Products */,
@@ -92,6 +102,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		34F80E5C2E5D25B600B2095B /* MultiCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				34F80E652E5D26DD00B2095B /* CalendarView.swift */,
+				34F80E602E5D25B900B2095B /* ViewModel */,
+				34F80E592E5D25B600B2095B /* Assets.xcassets */,
+				34F80E5A2E5D25B600B2095B /* ContentView.swift */,
+				34F80E5B2E5D25B600B2095B /* MultiCalendarApp.swift */,
+				34F80E632E5D262900B2095B /* ScheduleView.swift */,
+			);
+			path = MultiCalendar;
+			sourceTree = "<group>";
+		};
+		34F80E602E5D25B900B2095B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				34F80E612E5D25D800B2095B /* MultiCalendarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +137,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				34F80E192E56643000B2095B /* MultiCalendar */,
 			);
 			name = MultiCalendar;
 			packageProductDependencies = (
@@ -212,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F80E5D2E5D25B600B2095B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F80E662E5D26DD00B2095B /* CalendarView.swift in Sources */,
+				34F80E642E5D262900B2095B /* ScheduleView.swift in Sources */,
+				34F80E622E5D25D800B2095B /* MultiCalendarViewModel.swift in Sources */,
+				34F80E5E2E5D25B600B2095B /* ContentView.swift in Sources */,
+				34F80E5F2E5D25B600B2095B /* MultiCalendarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
