@@ -29,5 +29,5 @@ jobs:
 
 
       - name: Run tests with Fastlane
-        run: bundle exec fastlane tests
+        run: bundle exec fastlane ios tests
 
