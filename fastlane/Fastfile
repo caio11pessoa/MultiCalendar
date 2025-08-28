@@ -26,7 +26,6 @@ platform :ios do
       scheme: "MultiCalendar",
       clean: true,
       code_coverage: true,
-      device: "iPhone 16 Pro"  # apenas pelo nome
     )
   end
 
