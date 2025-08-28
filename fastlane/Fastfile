@@ -26,9 +26,7 @@ platform :ios do
       scheme: "MultiCalendar",
       clean: true,
       code_coverage: true,
-      destination: "platform=iOS Simulator,name=iPhone 16 Pro,OS=18.6",
-      output_types: "junit,html",
-      output_directory: "fastlane/test_output"
+      destination: "platform=iOS Simulator,name=iPhone 16 Pro,OS=18.6"
     )
   end
 
