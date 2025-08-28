@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CalendarView: View {
+    @State private var viewModel = MultiCalendarView
     @State private var currentMonth = Date.now
     @State private var selectedDate = Date.now
     @State private var selectedHour = Date.now

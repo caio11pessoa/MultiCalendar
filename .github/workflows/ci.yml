@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: macos-latest
+    runs-on: macOS-latest
 
     steps:
       - name: Checkout repository
@@ -25,5 +25,5 @@ jobs:
           bundle install
 
       - name: Run tests with Fastlane
-        run: bundle exec fastlane test
+        run: bundle exec fastlane tests
 
