@@ -12,6 +12,7 @@ struct ContentView: View {
         VStack {
             ScheduleView { arg in
                 print(arg)
+                // Abrir modal dos eventos da data
             }
         }
         .padding()

@@ -1,0 +1,29 @@
+name: iOS Tests
+
+on:
+  pull_request:
+    branches: [ main, develop ] # ajusta para os branches que quiser monitorar
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2 # Ajusta para a versão que você usa no projeto
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Run tests with Fastlane
+        run: bundle exec fastlane test
+
