@@ -24,9 +24,8 @@ jobs:
           gem install bundler
           bundle install
 
-      - name: List available simulators
-        run: xcrun simctl list devices
-
+      - name: Ensure iOS Simulator is available
+        run: sudo xcode-select -s /Applications/Xcode_16.app
 
       - name: Run tests with Fastlane
         run: bundle exec fastlane ios tests
