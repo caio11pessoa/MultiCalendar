@@ -24,6 +24,10 @@ jobs:
           gem install bundler
           bundle install
 
+      - name: List available simulators
+        run: xcrun simctl list devices
+
+
       - name: Run tests with Fastlane
         run: bundle exec fastlane tests
 
