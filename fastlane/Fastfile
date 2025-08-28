@@ -26,7 +26,7 @@ platform :ios do
       scheme: "MultiCalendar",
       clean: true,
       code_coverage: true,
-      devices: ["iPhone 14"]
+      devices: ["iPhone 16 Pro"]
     )
   end
 
