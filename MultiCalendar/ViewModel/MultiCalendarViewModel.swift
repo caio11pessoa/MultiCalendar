@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-@Observed
+@Observable
 class MultiCalendarViewModel {
-    
+    var currentMonth = Date.now
+    var selectedDate = Date.now
+    var selectedHour = Date.now
+    var days: [Date] = []
 }

@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @State private var viewModel = MultiCalendarView
-    @State private var currentMonth = Date.now
-    @State private var selectedDate = Date.now
-    @State private var selectedHour = Date.now
-    @State private var days: [Date] = []
+    @State private var viewModel = MultiCalendarViewModel()
     
     let daysOfWeek = Date.capitalizedFirstLettersOfWeekdays
     let columns = Array(repeating: GridItem(.flexible()), count: 7)
@@ -23,12 +19,12 @@ struct CalendarView: View {
         VStack(spacing: 20) {
             // Month navigation
             HStack {
-                Text(currentMonth.formatted(.dateTime.year().month()))
+                Text(viewModel.currentMonth.formatted(.dateTime.year().month()))
                     .font(.system(size: 16, weight: .bold))
                     .foregroundStyle(.white)
                 Spacer()
                 Button {
-                    currentMonth = Calendar.current.date(byAdding: .month, value: -1, to: currentMonth)!
+                    viewModel.currentMonth = Calendar.current.date(byAdding: .month, value: -1, to: viewModel.currentMonth)!
                     updateDays()
                 } label: {
                     Image(systemName: "chevron.left")
@@ -36,7 +32,7 @@ struct CalendarView: View {
                         .foregroundStyle(.blue)
                 }
                 Button {
-                    currentMonth = Calendar.current.date(byAdding: .month, value: 1, to: currentMonth)!
+                    viewModel.currentMonth = Calendar.current.date(byAdding: .month, value: 1, to: viewModel.currentMonth)!
                     updateDays()
                 } label: {
                     Image(systemName: "chevron.right")
@@ -57,11 +53,11 @@ struct CalendarView: View {
             
             // Grid of days
             LazyVGrid(columns: columns, spacing: 10) {
-                ForEach(days, id: \.self) { day in
+                ForEach(viewModel.days, id: \.self) { day in
                     Button {
-                        if day >= Date.now.startOfDay && day.monthInt == currentMonth.monthInt {
-                            selectedDate = day
-                            onDateSelected(selectedDate, selectedHour)
+                        if day >= Date.now.startOfDay && day.monthInt == viewModel.currentMonth.monthInt {
+                            viewModel.selectedDate = day
+                            onDateSelected(viewModel.selectedDate, viewModel.selectedHour)
                         }
                     } label: {
                         Text(day.formatted(.dateTime.day()))
@@ -71,24 +67,24 @@ struct CalendarView: View {
                             .background(
                                 Circle()
                                     .foregroundStyle(
-                                        day.formattedDate == selectedDate.formattedDate
+                                        day.formattedDate == viewModel.selectedDate.formattedDate
                                         ? .blue
                                         : .clear
                                     )
                             )
                     }
-                    .disabled(day < Date.now.startOfDay || day.monthInt != currentMonth.monthInt)
+                    .disabled(day < Date.now.startOfDay || day.monthInt != viewModel.currentMonth.monthInt)
                 }
             }
             
             // Time picker
             DatePicker(
                 "",
-                selection: $selectedHour,
+                selection: $viewModel.selectedHour,
                 displayedComponents: [.hourAndMinute]
             )
-            .onChange(of: selectedHour) {
-                onDateSelected(selectedDate, selectedHour)
+            .onChange(of: viewModel.selectedHour) {
+                onDateSelected(viewModel.selectedDate, viewModel.selectedHour)
             }
             .datePickerStyle(.compact)
             .datePickerStyle(GraphicalDatePickerStyle())
@@ -98,17 +94,17 @@ struct CalendarView: View {
         .padding()
         .onAppear {
             updateDays()
-            onDateSelected(selectedDate, selectedHour)
+            onDateSelected(viewModel.selectedDate, viewModel.selectedHour)
         }
     }
     
     private func updateDays() {
-        days = currentMonth.calendarDisplayDays
+        viewModel.days = viewModel.currentMonth.calendarDisplayDays
     }
     
     private func foregroundStyle(for day: Date) -> Color {
-        let isDifferentMonth = day.monthInt != currentMonth.monthInt
-        let isSelectedDate = day.formattedDate == selectedDate.formattedDate
+        let isDifferentMonth = day.monthInt != viewModel.currentMonth.monthInt
+        let isSelectedDate = day.formattedDate == viewModel.selectedDate.formattedDate
         let isPastDate = day < Date.now.startOfDay
         
         if isDifferentMonth {

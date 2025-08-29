@@ -12,21 +12,25 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+#        uses: actions/checkout@v4
+        uses: actions/checkout@v1
+#
+#      - name: Set up Ruby
+#        uses: ruby/setup-ruby@v1
+#        with:
+#          ruby-version: 3.2 # Ajusta para a versão que você usa no projeto
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.2 # Ajusta para a versão que você usa no projeto
+#      - name: Install dependencies
+#        run: |
+#          gem install bundler
+#          bundle install
 
-      - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install
+      - name: Bundle Install
+        run: bundle install
 
-      - name: Ensure iOS Simulator is available
-        run: sudo xcode-select -s /Applications/Xcode_16.app
+      # - name: Ensure iOS Simulator is available
+      #   run: sudo xcode-select -s /Applications/Xcode_16.app
 
       - name: Run tests with Fastlane
-        run: bundle exec fastlane ios tests
+        run: bundle exec fastlane tests
 
