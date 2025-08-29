@@ -39,19 +39,18 @@ jobs:
         run: bundle exec fastlane tests
       
       - name: Send Discord Notification
-        if: always()
+        if: always() # executa mesmo se falhar
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          JOB_STATUS: ${{ job.status }}
         run: |
           STATUS="✅ Success"
-          # Verifica se o passo 'run_tests' falhou
-          if [ "${{ steps.run_tests.conclusion }}" != "success" ]; then
-            STATUS="❌ Failed value:${{ steps.run_tests.conclusion }}"
+          if [ "$JOB_STATUS" != "success" ]; then
+            STATUS="❌ Failed"
           fi
 
           curl -H "Content-Type: application/json" \
-              -X POST \
-              -d "{\"content\": \"iOS Tests completed: $STATUS\nRepository: $GITHUB_REPOSITORY\nPR: $GITHUB_REF\"}" \
-              "$WEBHOOK_URL"
-
+               -X POST \
+               -d "{\"content\": \"📱 iOS Tests completed: $STATUS\n🔗 Repository: $GITHUB_REPOSITORY\n🌿 Ref: $GITHUB_REF\"}" \
+               "$WEBHOOK_URL"
 
