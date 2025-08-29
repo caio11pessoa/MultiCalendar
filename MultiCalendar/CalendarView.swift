@@ -25,7 +25,7 @@ struct CalendarView: View {
                 Spacer()
                 Button {
                     viewModel.currentMonth = Calendar.current.date(byAdding: .month, value: -1, to: viewModel.currentMonth)!
-                    updateDays()
+                    viewModel.updateDays()
                 } label: {
                     Image(systemName: "chevron.left")
                         .font(.title2)
@@ -33,7 +33,7 @@ struct CalendarView: View {
                 }
                 Button {
                     viewModel.currentMonth = Calendar.current.date(byAdding: .month, value: 1, to: viewModel.currentMonth)!
-                    updateDays()
+                    viewModel.updateDays()
                 } label: {
                     Image(systemName: "chevron.right")
                         .font(.title2)
@@ -93,13 +93,9 @@ struct CalendarView: View {
         }
         .padding()
         .onAppear {
-            updateDays()
+            viewModel.updateDays()
             onDateSelected(viewModel.selectedDate, viewModel.selectedHour)
         }
-    }
-    
-    private func updateDays() {
-        viewModel.days = viewModel.currentMonth.calendarDisplayDays
     }
     
     private func foregroundStyle(for day: Date) -> Color {

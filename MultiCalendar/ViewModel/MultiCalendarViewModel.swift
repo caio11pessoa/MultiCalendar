@@ -13,4 +13,9 @@ class MultiCalendarViewModel {
     var selectedDate = Date.now
     var selectedHour = Date.now
     var days: [Date] = []
+    
+    func updateDays() {
+        days = currentMonth.calendarDisplayDays
+    }
 }
+

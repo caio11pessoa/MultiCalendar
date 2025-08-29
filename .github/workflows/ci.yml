@@ -45,7 +45,7 @@ jobs:
           fi
           curl -H "Content-Type: application/json" \
               -X POST \
-              -d "{\"content\": \"iOS Tests completed: $STATUS\nRepository: $GITHUB_REPOSITORY\nPR: $GITHUB_REF\"}"\
+              -d "{\"content\": \"iOS Tests completed: $STATUS\nRepository: $GITHUB_REPOSITORY\nPR: $GITHUB_REF\"}" \
               $WEBHOOK_URL
 
 
