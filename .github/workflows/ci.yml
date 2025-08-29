@@ -31,9 +31,6 @@ jobs:
       # - name: Ensure iOS Simulator is available
       #   run: sudo xcode-select -s /Applications/Xcode_16.app
 
-      - name: discord notification
-        run: bundle exec fastlane discord
-
       - name: Run tests with Fastlane
         id: run_tests
         run: bundle exec fastlane tests
