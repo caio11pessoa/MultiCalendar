@@ -24,7 +24,7 @@ final class MultiCalendarTests: XCTestCase {
     func testInitialValues() throws {
         XCTAssertNotNil(viewModel.currentMonth)
         XCTAssertNotNil(viewModel.selectedDate)
-        XCTAssertNotNil(nil)
+        XCTAssertNotNil(viewModel.selectedHour)
         XCTAssertTrue(viewModel.days.isEmpty, "Days array should be empty on initialization")
     }
 

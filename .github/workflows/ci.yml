@@ -32,6 +32,7 @@ jobs:
       #   run: sudo xcode-select -s /Applications/Xcode_16.app
 
       - name: Run tests with Fastlane
+        id: run_tests
         run: bundle exec fastlane tests
       
       - name: Send Discord Notification
