@@ -50,4 +50,6 @@ jobs:
                -X POST \
                -d "{\"content\": \"📱 iOS Tests completed: $STATUS\n🔗 Repository: $GITHUB_REPOSITORY\n🌿 Ref: $GITHUB_REF\"}" \
                "$WEBHOOK_URL"
+      - name: send DiscordNotification FastLane
+        run: bundle exec fastlane discord
 
