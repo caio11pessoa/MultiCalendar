@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "0C9D87FC-9A3F-4A27-9B08-FD936CD02DDD",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:MultiCalendar.xcodeproj",
+      "identifier" : "34F80E162E56643000B2095B",
+      "name" : "MultiCalendar"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:MultiCalendar.xcodeproj",
+        "identifier" : "34F80E232E56643200B2095B",
+        "name" : "MultiCalendarTests"
+      }
+    }
+  ],
+  "version" : 1
+}

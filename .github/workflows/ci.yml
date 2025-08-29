@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout repository
 #        uses: actions/checkout@v4
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
 #
 #      - name: Set up Ruby
 #        uses: ruby/setup-ruby@v1
@@ -30,6 +30,9 @@ jobs:
 
       # - name: Ensure iOS Simulator is available
       #   run: sudo xcode-select -s /Applications/Xcode_16.app
+
+      - name: discord notification
+        run: bundle exec fastlane discord
 
       - name: Run tests with Fastlane
         id: run_tests

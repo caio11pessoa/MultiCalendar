@@ -26,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34209A082E62679000B68DDE /* MultiCalendar.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MultiCalendar.xctestplan; sourceTree = "<group>"; };
 		34F80E172E56643000B2095B /* MultiCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F80E242E56643200B2095B /* MultiCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F80E592E5D25B600B2095B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		34F80E0E2E56643000B2095B = {
 			isa = PBXGroup;
 			children = (
+				34209A082E62679000B68DDE /* MultiCalendar.xctestplan */,
 				34F80E5C2E5D25B600B2095B /* MultiCalendar */,
 				34F80E272E56643200B2095B /* MultiCalendarTests */,
 				34F80E182E56643000B2095B /* Products */,

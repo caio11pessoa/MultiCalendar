@@ -15,6 +15,28 @@
 
 default_platform(:ios)
 
+def discord(params)
+  require 'net/http'
+  require 'uri'
+  require 'json'
+
+  uri = URI.parse(params[:webhook_url])
+  header = {'Content-Type': 'application/json'}
+  body = {
+    content: params[:message]
+  }
+
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  request = Net::HTTP::Post.new(uri.request_uri, header)
+  request.body = body.to_json
+  response = http.request(request)
+
+  UI.message("Discord response: #{response.body}")
+end
+
+
+
 platform :ios do
   desc "Description of what the lane does"
   lane :build do
@@ -26,6 +48,13 @@ platform :ios do
       scheme: "MultiCalendar",
       clean: true,
       code_coverage: true,
+    )
+  end
+
+  lane :discord do
+    discord(
+      webhook_url: "https://discord.com/api/webhooks/1411131335233372170/XTQhwu-jn5WUdCMdoFkHVRToe9VygKEuUfnPpLTyzzby5ic-4lhWL4PQP-HnsglzObg3x ",
+      message: "🚀 Deploy finalizado no TestFlight via Fastlane!"
     )
   end
 
