@@ -23,19 +23,11 @@
 			remoteGlobalIDString = 34F80E162E56643000B2095B;
 			remoteInfo = MultiCalendar;
 		};
-		34F80E2F2E56643200B2095B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 34F80E0F2E56643000B2095B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 34F80E162E56643000B2095B;
-			remoteInfo = MultiCalendar;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		34F80E172E56643000B2095B /* MultiCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F80E242E56643200B2095B /* MultiCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		34F80E2E2E56643200B2095B /* MultiCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F80E592E5D25B600B2095B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34F80E5A2E5D25B600B2095B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		34F80E5B2E5D25B600B2095B /* MultiCalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCalendarApp.swift; sourceTree = "<group>"; };
@@ -48,11 +40,6 @@
 		34F80E272E56643200B2095B /* MultiCalendarTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MultiCalendarTests;
-			sourceTree = "<group>";
-		};
-		34F80E312E56643200B2095B /* MultiCalendarUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MultiCalendarUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -72,13 +59,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		34F80E2B2E56643200B2095B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -87,7 +67,6 @@
 			children = (
 				34F80E5C2E5D25B600B2095B /* MultiCalendar */,
 				34F80E272E56643200B2095B /* MultiCalendarTests */,
-				34F80E312E56643200B2095B /* MultiCalendarUITests */,
 				34F80E182E56643000B2095B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,7 +76,6 @@
 			children = (
 				34F80E172E56643000B2095B /* MultiCalendar.app */,
 				34F80E242E56643200B2095B /* MultiCalendarTests.xctest */,
-				34F80E2E2E56643200B2095B /* MultiCalendarUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,29 +146,6 @@
 			productReference = 34F80E242E56643200B2095B /* MultiCalendarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		34F80E2D2E56643200B2095B /* MultiCalendarUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 34F80E3E2E56643200B2095B /* Build configuration list for PBXNativeTarget "MultiCalendarUITests" */;
-			buildPhases = (
-				34F80E2A2E56643200B2095B /* Sources */,
-				34F80E2B2E56643200B2095B /* Frameworks */,
-				34F80E2C2E56643200B2095B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				34F80E302E56643200B2095B /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				34F80E312E56643200B2095B /* MultiCalendarUITests */,
-			);
-			name = MultiCalendarUITests;
-			packageProductDependencies = (
-			);
-			productName = MultiCalendarUITests;
-			productReference = 34F80E2E2E56643200B2095B /* MultiCalendarUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,10 +160,6 @@
 						CreatedOnToolsVersion = 16.4;
 					};
 					34F80E232E56643200B2095B = {
-						CreatedOnToolsVersion = 16.4;
-						TestTargetID = 34F80E162E56643000B2095B;
-					};
-					34F80E2D2E56643200B2095B = {
 						CreatedOnToolsVersion = 16.4;
 						TestTargetID = 34F80E162E56643000B2095B;
 					};
@@ -230,7 +181,6 @@
 			targets = (
 				34F80E162E56643000B2095B /* MultiCalendar */,
 				34F80E232E56643200B2095B /* MultiCalendarTests */,
-				34F80E2D2E56643200B2095B /* MultiCalendarUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,13 +195,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		34F80E222E56643200B2095B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34F80E2C2E56643200B2095B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,13 +223,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		34F80E2A2E56643200B2095B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -294,11 +230,6 @@
 			isa = PBXTargetDependency;
 			target = 34F80E162E56643000B2095B /* MultiCalendar */;
 			targetProxy = 34F80E252E56643200B2095B /* PBXContainerItemProxy */;
-		};
-		34F80E302E56643200B2095B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 34F80E162E56643000B2095B /* MultiCalendar */;
-			targetProxy = 34F80E2F2E56643200B2095B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -518,40 +449,6 @@
 			};
 			name = Release;
 		};
-		34F80E3F2E56643200B2095B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MT4A7M75NC;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.caiopessoa.MultiCalendarUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MultiCalendar;
-			};
-			name = Debug;
-		};
-		34F80E402E56643200B2095B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MT4A7M75NC;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.caiopessoa.MultiCalendarUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MultiCalendar;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,15 +475,6 @@
 			buildConfigurations = (
 				34F80E3C2E56643200B2095B /* Debug */,
 				34F80E3D2E56643200B2095B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		34F80E3E2E56643200B2095B /* Build configuration list for PBXNativeTarget "MultiCalendarUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				34F80E3F2E56643200B2095B /* Debug */,
-				34F80E402E56643200B2095B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

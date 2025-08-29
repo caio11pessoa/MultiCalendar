@@ -9,28 +9,29 @@ import XCTest
 @testable import MultiCalendar
 
 final class MultiCalendarTests: XCTestCase {
+    
+    var viewModel: MultiCalendarViewModel!
+
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewModel = MultiCalendarViewModel()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testInitialValues() throws {
+        XCTAssertNotNil(viewModel.currentMonth)
+        XCTAssertNotNil(viewModel.selectedDate)
+        XCTAssertNotNil(viewModel.selectedHour)
+        XCTAssertTrue(viewModel.days.isEmpty, "Days array should be empty on initialization")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testUpdateDaysPopulatesDaysArray() throws {
+        XCTAssertTrue(viewModel.days.isEmpty, "Days array should start empty")
+        viewModel.updateDays()
+        XCTAssertFalse(viewModel.days.isEmpty, "Days array should be populated after updateDays()")
     }
 
 }

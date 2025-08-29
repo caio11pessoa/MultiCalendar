@@ -22,7 +22,7 @@ platform :ios do
   end
 
   lane :tests do
-    scan(
+    run_tests(
       scheme: "MultiCalendar",
       clean: true,
       code_coverage: true,
