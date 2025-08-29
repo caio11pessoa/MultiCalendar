@@ -37,15 +37,17 @@ jobs:
       - name: Send Discord Notification
         if: always()
         env:
-          WEEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           STATUS="✅ Success"
-          if [ ${{ steps.run_tests.outcome }} != "success" ]; then
+          # Verifica se o passo 'run_tests' falhou
+          if [ "${{ steps.run_tests.conclusion }}" != "success" ]; then
             STATUS="❌ Failed"
           fi
+
           curl -H "Content-Type: application/json" \
               -X POST \
               -d "{\"content\": \"iOS Tests completed: $STATUS\nRepository: $GITHUB_REPOSITORY\nPR: $GITHUB_REF\"}" \
-              $WEBHOOK_URL
+              "$WEBHOOK_URL"
 
 
