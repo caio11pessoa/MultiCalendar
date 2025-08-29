@@ -42,7 +42,7 @@ jobs:
           STATUS="✅ Success"
           # Verifica se o passo 'run_tests' falhou
           if [ "${{ steps.run_tests.conclusion }}" != "success" ]; then
-            STATUS="❌ Failed"
+            STATUS="❌ Failed value:${{ steps.run_tests.conclusion }}"
           fi
 
           curl -H "Content-Type: application/json" \
