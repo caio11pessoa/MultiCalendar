@@ -53,7 +53,7 @@ platform :ios do
 
   lane :discord do
     discord(
-      webhook_url: "https://discord.com/api/webhooks/1411131335233372170/XTQhwu-jn5WUdCMdoFkHVRToe9VygKEuUfnPpLTyzzby5ic-4lhWL4PQP-HnsglzObg3x ",
+      webhook_url: "https://discord.com/api/webhooks/1411131335233372170/XTQhwu-jn5WUdCMdoFkHVRToe9VygKEuUfnPpLTyzzby5ic-4lhWL4PQP-HnsglzObg3x",
       message: "🚀 Deploy finalizado no TestFlight via Fastlane!"
     )
   end
